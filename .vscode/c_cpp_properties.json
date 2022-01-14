@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "C/CPP Properties",
+            "defines": [],
+            "includePath": [
+                "${workspaceFolder}\\",
+                "${workspaceFolder}\\src\\"
+            ],
+            "intelliSenseMode": "windows-gcc-x86",
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "cppStandard": "gnu++11"
+        }
+    ],
+    "version": 4
+}

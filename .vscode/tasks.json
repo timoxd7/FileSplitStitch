@@ -1,0 +1,50 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Create build dir",
+            "linux": {
+                "command": "mkdir -p ./build/release"
+            },
+            "windows": {
+                "command": "cmd",
+                "args": [
+                    "/C",
+                    "if not exist .\\build mkdir .\\build"
+                ]
+            }
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: gcc.exe Compile",
+            "command": "C:\\MinGW\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-std=gnu++11",
+                "-g",
+                "-I",
+                "${workspaceFolder}\\",
+                "-I",
+                "${workspaceFolder}\\src\\",
+                "${workspaceFolder}\\main.cpp",
+                "-o",
+                "${workspaceFolder}\\build\\main.exe",
+                "-llibstdc++",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compile main",
+            "dependsOn": "Create build dir",
+        }
+    ],
+    "version": "2.0.0"
+}
